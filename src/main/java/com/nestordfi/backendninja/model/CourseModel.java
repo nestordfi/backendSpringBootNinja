@@ -1,36 +1,17 @@
-package com.nestordfi.backendninja.entity;
+package com.nestordfi.backendninja.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class CourseModel {
 
-@Entity
-@Table(name = "course")
-public class Course {
-
-	@Id
-	@GeneratedValue
-	@Column(name="id")
 	private int id;
-	
-	@Column(name="name")
 	private String name;
-	
-	@Column(name="description")
 	private String description;
-	
-	@Column(name="price")
 	private int price;
-	
-	@Column(name="hours")
 	private int hours;
 
-	public Course() {
+	public CourseModel() {
 	}
 
-	public Course(int id, String name, String description, int price, int hours) {
+	public CourseModel(int id, String name, String description, int price, int hours) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -81,8 +62,8 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", hours="
-				+ hours + "]";
+		return "CourseModel [name=" + name + ", description=" + description + ", price=" + price + ", hours=" + hours
+				+ "]";
 	}
 
 }
