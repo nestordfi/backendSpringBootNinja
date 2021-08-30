@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nestordfi.backendninja.constant.ViewConstant;
 import com.nestordfi.backendninja.model.UserCredential;
 
 @Controller
@@ -30,7 +31,7 @@ public class LoginController {
 		model.addAttribute("error", error);
 		model.addAttribute("logout", logout);
 		LOG.info("Returning to login view");
-		return "login";
+		return ViewConstant.LOGIN;
 	}
 
 	@PostMapping("logincheck")
@@ -38,7 +39,7 @@ public class LoginController {
 		LOG.info("METHOD: loginCheck() PARAM: " + userCredential.toString());
 		if (userCredential.getUsername().equals("user") && userCredential.getPassword().equals("user")) {
 			LOG.info("Returning to contacts view");
-			return "contacts";
+			return "redirect:/contacts/showcontacts";
 		}
 
 		LOG.info("Redirect to login?error");
